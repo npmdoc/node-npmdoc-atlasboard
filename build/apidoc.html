@@ -1,0 +1,1600 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://atlasboard.bitbucket.org"
+
+    >atlasboard (v1.1.3)</a>
+</h1>
+<h4>AtlasBoard is dashboard/wallboard framework written all in JS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard">module atlasboard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.event_queue">
+            function <span class="apidocSignatureSpan">atlasboard.</span>event_queue
+            <span class="apidocSignatureSpan">(io)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.scheduler">
+            function <span class="apidocSignatureSpan">atlasboard.</span>scheduler
+            <span class="apidocSignatureSpan">(jobWorker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>event_queue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>hipchat</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>item_manager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>job_initialiser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>job_manager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>package_dependency_manager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>path_resolver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>scheduler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>stylus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">atlasboard.</span>template_manager</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.event_queue">module atlasboard.event_queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.event_queue.event_queue">
+            function <span class="apidocSignatureSpan">atlasboard.</span>event_queue
+            <span class="apidocSignatureSpan">(io)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.event_queue.prototype">module atlasboard.event_queue.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.event_queue.prototype.send">
+            function <span class="apidocSignatureSpan">atlasboard.event_queue.prototype.</span>send
+            <span class="apidocSignatureSpan">(id, data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.helpers">module atlasboard.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.helpers.areValidPathElements">
+            function <span class="apidocSignatureSpan">atlasboard.helpers.</span>areValidPathElements
+            <span class="apidocSignatureSpan">(paths)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.helpers.getJSONFromFile">
+            function <span class="apidocSignatureSpan">atlasboard.helpers.</span>getJSONFromFile
+            <span class="apidocSignatureSpan">(path, defaultValue, warnIfFileNotExists, warnIfFileIsInvalid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.helpers.getRndInt">
+            function <span class="apidocSignatureSpan">atlasboard.helpers.</span>getRndInt
+            <span class="apidocSignatureSpan">(min, max)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.helpers.isPathContainedInRoot">
+            function <span class="apidocSignatureSpan">atlasboard.helpers.</span>isPathContainedInRoot
+            <span class="apidocSignatureSpan">(pathDir, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.helpers.readJSONFile">
+            function <span class="apidocSignatureSpan">atlasboard.helpers.</span>readJSONFile
+            <span class="apidocSignatureSpan">(dashboardPath, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.hipchat">module atlasboard.hipchat</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.hipchat.create">
+            function <span class="apidocSignatureSpan">atlasboard.hipchat.</span>create
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.item_manager">module atlasboard.item_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.item_manager.get">
+            function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>get
+            <span class="apidocSignatureSpan">(packagesPath, itemType, extension, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.item_manager.getByPackage">
+            function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>getByPackage
+            <span class="apidocSignatureSpan">(packagesPath, itemType, extension, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.item_manager.getFirst">
+            function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>getFirst
+            <span class="apidocSignatureSpan">(packagesPath, itemName, itemType, extension, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.item_manager.resolveCandidates">
+            function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>resolveCandidates
+            <span class="apidocSignatureSpan">(items, name, itemType, extension)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.item_manager.resolveLocation">
+            function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>resolveLocation
+            <span class="apidocSignatureSpan">(name, itemType, extension)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.job_initialiser">module atlasboard.job_initialiser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.job_initialiser.init">
+            function <span class="apidocSignatureSpan">atlasboard.job_initialiser.</span>init
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.job_manager">module atlasboard.job_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.job_manager.getJobs">
+            function <span class="apidocSignatureSpan">atlasboard.job_manager.</span>getJobs
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.package_dependency_manager">module atlasboard.package_dependency_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.package_dependency_manager.installDependencies">
+            function <span class="apidocSignatureSpan">atlasboard.package_dependency_manager.</span>installDependencies
+            <span class="apidocSignatureSpan">(packagesPath, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.path_resolver">module atlasboard.path_resolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.path_resolver.fromAtlasboard">
+            function <span class="apidocSignatureSpan">atlasboard.path_resolver.</span>fromAtlasboard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.path_resolver.fromLocalWallboard">
+            function <span class="apidocSignatureSpan">atlasboard.path_resolver.</span>fromLocalWallboard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.scheduler">module atlasboard.scheduler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.scheduler.scheduler">
+            function <span class="apidocSignatureSpan">atlasboard.</span>scheduler
+            <span class="apidocSignatureSpan">(jobWorker)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.scheduler.prototype">module atlasboard.scheduler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.scheduler.prototype.scheduleNext">
+            function <span class="apidocSignatureSpan">atlasboard.scheduler.prototype.</span>scheduleNext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.scheduler.prototype.start">
+            function <span class="apidocSignatureSpan">atlasboard.scheduler.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.stylus">module atlasboard.stylus</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.stylus.getMiddleware">
+            function <span class="apidocSignatureSpan">atlasboard.stylus.</span>getMiddleware
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.stylus.getWidgetCSS">
+            function <span class="apidocSignatureSpan">atlasboard.stylus.</span>getWidgetCSS
+            <span class="apidocSignatureSpan">(str, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.atlasboard.template_manager">module atlasboard.template_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.template_manager.resolveTemplateLocation">
+            function <span class="apidocSignatureSpan">atlasboard.template_manager.</span>resolveTemplateLocation
+            <span class="apidocSignatureSpan">(fileName, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard" id="apidoc.module.atlasboard">module atlasboard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.event_queue" id="apidoc.element.atlasboard.event_queue">
+        function <span class="apidocSignatureSpan">atlasboard.</span>event_queue
+        <span class="apidocSignatureSpan">(io)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventQueue(io) {
+  this.io = io;
+  this.latestEvents = {};
+  var self = this;
+
+  io.on(&#x22;connection&#x22;, function (socket) {
+    socket.on(&#x22;resend&#x22;, function (data) {
+      if (self.latestEvents[data]) {
+        socket.emit(data, self.latestEvents[data]);
+      }
+    });
+
+    // broadcast logs
+    socket.on(&#x22;log&#x22;, function (data) {
+      socket.broadcast.emit(&#x27;client&#x27;, data);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.scheduler" id="apidoc.element.atlasboard.scheduler">
+        function <span class="apidocSignatureSpan">atlasboard.</span>scheduler
+        <span class="apidocSignatureSpan">(jobWorker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scheduler(jobWorker) {
+  this.jobWorker = ensureSafeJobWorkerConfiguration(jobWorker);
+  this.originalInterval = jobWorker.config.interval;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.event_queue" id="apidoc.module.atlasboard.event_queue">module atlasboard.event_queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.event_queue.event_queue" id="apidoc.element.atlasboard.event_queue.event_queue">
+        function <span class="apidocSignatureSpan">atlasboard.</span>event_queue
+        <span class="apidocSignatureSpan">(io)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventQueue(io) {
+  this.io = io;
+  this.latestEvents = {};
+  var self = this;
+
+  io.on(&#x22;connection&#x22;, function (socket) {
+    socket.on(&#x22;resend&#x22;, function (data) {
+      if (self.latestEvents[data]) {
+        socket.emit(data, self.latestEvents[data]);
+      }
+    });
+
+    // broadcast logs
+    socket.on(&#x22;log&#x22;, function (data) {
+      socket.broadcast.emit(&#x27;client&#x27;, data);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.event_queue.prototype" id="apidoc.module.atlasboard.event_queue.prototype">module atlasboard.event_queue.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.event_queue.prototype.send" id="apidoc.element.atlasboard.event_queue.prototype.send">
+        function <span class="apidocSignatureSpan">atlasboard.event_queue.prototype.</span>send
+        <span class="apidocSignatureSpan">(id, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (id, data) {
+  this.latestEvents[id] = data;
+  this.io.emit(id, data); // emit to widget
+  this.io.emit(&#x27;client&#x27;, {widgetId: id, data: data}); // emit to logger
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// unique id for this widget in the wallboard
+jobWorker.id = jobWorker.dashboard_name + &#x27;-&#x27; +
+    (jobWorker.widget_item.r || jobWorker.widget_item.row) + &#x27;-&#x27; +
+    (jobWorker.widget_item.c || jobWorker.widget_item.col);
+
+jobWorker.pushUpdate = function (data) {
+  eventQueue.<span class="apidocCodeKeywordSpan">send</span>(jobWorker.id, data);
+};
+
+// add security info
+jobWorker.config.globalAuth = globalAuth;
+
+if (jobWorker.widget_item.enabled !== false) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.helpers" id="apidoc.module.atlasboard.helpers">module atlasboard.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.helpers.areValidPathElements" id="apidoc.element.atlasboard.helpers.areValidPathElements">
+        function <span class="apidocSignatureSpan">atlasboard.helpers.</span>areValidPathElements
+        <span class="apidocSignatureSpan">(paths)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">areValidPathElements = function (paths) {
+
+  function valid(path){
+    if (!path) {
+      return false;
+    }
+
+    var malicius = false;
+    path = path.toString(); //in case it is another type, like number
+
+    if ((path.indexOf(&#x22;/&#x22;) !== -1) || (path.indexOf(&#x22;\\&#x22;) !== -1)) {
+      malicius = true;
+    }
+
+    if (path.indexOf(&#x22;..&#x22;) !== -1) {
+      malicius = true;
+    }
+
+    if (path.indexOf(&#x27;\0&#x27;) !== -1) {
+      malicius = true;
+    }
+
+    if (malicius){
+      console.log(&#x22;Malicious path detected: %s&#x22;, path);
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+  paths = Array.isArray(paths) ? paths : [paths];
+  return paths.every(valid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.helpers.getJSONFromFile" id="apidoc.element.atlasboard.helpers.getJSONFromFile">
+        function <span class="apidocSignatureSpan">atlasboard.helpers.</span>getJSONFromFile
+        <span class="apidocSignatureSpan">(path, defaultValue, warnIfFileNotExists, warnIfFileIsInvalid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getJSONFromFile = function (path, defaultValue, warnIfFileNotExists, warnIfFileIsInvalid){
+  try {
+    if (!fs.existsSync(path)){
+      if (warnIfFileNotExists) {
+        warnIfFileNotExists(path);
+      }
+      return defaultValue;
+    }
+    return JSON.parse(fs.readFileSync(path));
+  }
+  catch (e){
+    if (warnIfFileIsInvalid) {
+      warnIfFileIsInvalid(path, e);
+    }
+    return defaultValue;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.helpers.getRndInt" id="apidoc.element.atlasboard.helpers.getRndInt">
+        function <span class="apidocSignatureSpan">atlasboard.helpers.</span>getRndInt
+        <span class="apidocSignatureSpan">(min, max)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRndInt = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.helpers.isPathContainedInRoot" id="apidoc.element.atlasboard.helpers.isPathContainedInRoot">
+        function <span class="apidocSignatureSpan">atlasboard.helpers.</span>isPathContainedInRoot
+        <span class="apidocSignatureSpan">(pathDir, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPathContainedInRoot = function (pathDir, root){
+  if (typeof root !== &#x27;string&#x27; || typeof pathDir !== &#x27;string&#x27;){
+    return false;
+  }
+
+  if (pathDir[0] !== &#x22;/&#x22;) {
+    pathDir = path.join(process.cwd(), pathDir);
+  }
+  return pathDir.indexOf(root) === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.helpers.readJSONFile" id="apidoc.element.atlasboard.helpers.readJSONFile">
+        function <span class="apidocSignatureSpan">atlasboard.helpers.</span>readJSONFile
+        <span class="apidocSignatureSpan">(dashboardPath, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readJSONFile = function (dashboardPath, cb) {
+  fs.readFile(dashboardPath, function read(err, data){
+    if (err) { return cb (err); }
+    try {
+      cb(null, JSON.parse(data));
+    } catch(e){
+      cb(e);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.hipchat" id="apidoc.module.atlasboard.hipchat">module atlasboard.hipchat</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.hipchat.create" id="apidoc.element.atlasboard.hipchat.create">
+        function <span class="apidocSignatureSpan">atlasboard.hipchat.</span>create
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (options) {
+  var request = options.request || require (&#x27;request&#x27;);
+
+  if (!options.api_key){
+    throw &#x27;api_key required&#x27;;
+  }
+
+  var errors = {
+    400: &#x27;Bad request. Please check your data&#x27;,
+    401: &#x27;Unauthorized: API KEY not valid&#x27;,
+    403: &#x27;You have exceeded the rate limit&#x27;,
+    404: &#x27;Not found&#x27;,
+    406: &#x27;You requested an invalid content type&#x27;,
+    500: &#x27;Server Error&#x27;,
+    503: &#x27;The method you requested is currently unavailable (due to maintenance or high load&#x27;
+  };
+
+  var onResponseBuilder = function (callback) {
+    return function (err, response, body) {
+      if (callback) {
+        var errMsg = null;
+        if (err || !response || response.statusCode != 200) {
+          errMsg = err;
+          if (response &#x26;&#x26; errors[response.statusCode]) {
+            errMsg += &#x27; &#x27; + errors[response.statusCode] + &#x27;; &#x27; + body;
+          }
+        }
+        callback(errMsg, response ? response.statusCode : null, body);
+      }
+    };
+  };
+
+  return {
+<span class="apidocCodeCommentSpan">    /**
+     * Push message to HipChat server
+     * @param roomId id of the room (number)
+     * @param from sender name
+     * @param message body of the message
+     * @param notify should trigger a room notification? values: 1,0
+     * @param callback a callback to be executed when complete
+     */
+</span>    &#x27;message&#x27; : function (roomId, from, message, notify, callback){
+      var url = API_URL + &#x27;v1/rooms/message?format=json&#x26;auth_token=&#x27; + options.api_key;
+
+      var data = {
+        &#x27;room_id&#x27; : roomId,
+        &#x27;from&#x27; : from,
+        &#x27;message&#x27; : message,
+        &#x27;notify&#x27; : notify
+      };
+
+      request.post({
+          url: url,
+          headers:{&#x27;content-type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;},
+          body: qstring.stringify(data)
+        }, onResponseBuilder(callback));
+    },
+    /**
+     * Get a room info from hipchat
+     * @param roomId id of the room (number)
+     * @param callback a callback to be executed when complete
+     */
+    &#x27;roomInfo&#x27; : function (roomId, callback){
+      var url = API_URL + &#x27;v2/room/&#x27; + roomId + &#x27;?format=json&#x26;auth_token=&#x27; + options.api_key;
+      request.get({url: url, json:true}, onResponseBuilder(callback));
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.item_manager" id="apidoc.module.atlasboard.item_manager">module atlasboard.item_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.item_manager.get" id="apidoc.element.atlasboard.item_manager.get">
+        function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>get
+        <span class="apidocSignatureSpan">(packagesPath, itemType, extension, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (packagesPath, itemType, extension, callback) {
+  this.getByPackage(packagesPath, itemType, extension, function (err, results) {
+    if (err) {
+      return callback(err);
+    }
+    var items = [];
+    results.forEach(function (package) {
+      items = items.concat(package.items);
+    });
+    callback(null, items);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+module.exports = {
+
+onInit: function (config, dependencies) {
+  dependencies.logger.info(&#x27;adding routes...&#x27;);
+  dependencies.app.route(&#x22;/jobs/mycustomroute&#x22;)
+      .<span class="apidocCodeKeywordSpan">get</span>(function (req, res) {
+        res.end(&#x27;So something useful here&#x27;);
+      });
+
+},
+
+onRun: function (config, dependencies, jobCallback) {
+  // code to be executed every interval
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.item_manager.getByPackage" id="apidoc.element.atlasboard.item_manager.getByPackage">
+        function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>getByPackage
+        <span class="apidocSignatureSpan">(packagesPath, itemType, extension, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getByPackage = function (packagesPath, itemType, extension, callback) {
+
+  if (!Array.isArray(packagesPath)) {
+    packagesPath = [packagesPath];
+  }
+
+  function readItemsFromPackageDir(dir, cb) {
+    var package = {dir: dir};
+
+    var itemDir = path.join(dir, itemType);
+    if (!fs.existsSync(itemDir)) {
+      package.items = [];
+      return cb(null, package);
+    }
+
+    // this functions parses:
+    // - packages/default/&#x3c;itemType&#x3e;/*
+    // - packages/otherpackages/&#x3c;itemType&#x3e;/*
+    // for dashboards, or:
+    // - packages/default/&#x3c;itemType&#x3e;/*/*.js
+    // - packages/otherpackages/&#x3c;itemType&#x3e;/*/*.js
+    // for jobs and widgets
+    fs.readdir(itemDir, function (err, items) {
+      if (err) {
+        return cb(err);
+      }
+
+      var selectedItems = [];
+      items.forEach(function (item_name) {
+        var item = path.join(itemDir, item_name);
+        var stat = fs.statSync(item);
+        if (stat.isDirectory()) {
+          // /job/job1/job1.js
+          item = path.join(item, item_name + extension);
+        }
+
+        if (path.extname(item) === extension) {
+          if (fs.existsSync(item)) {
+            selectedItems.push(item);
+          }
+        }
+      });
+
+      if (filters[itemType]) { // change to use custom filters for itemType
+        selectedItems = selectedItems.filter(filters[itemType]);
+      }
+
+      package.items = selectedItems;
+      return cb(null, package);
+    });
+  }
+
+
+  // this function read all the packages from the provided directory packagesPath:
+  // - packages/default/*
+  // - packages/otherpackages/*
+  // and calls readItemsFromPackageDir for every one of them
+
+  function fillPackages(packagesPath, cb) {
+    fs.readdir(packagesPath, function (err, allPackagesDir) {
+      if (err) {
+        return cb(err);
+      }
+
+      // convert to absolute path
+      allPackagesDir = allPackagesDir.map(function (partialDir) {
+        return path.join(packagesPath, partialDir);
+      });
+
+      // get only valid directories
+      allPackagesDir = allPackagesDir.filter(function (dir) {
+        return fs.statSync(dir).isDirectory();
+      });
+
+      // read items from every package and flatten results
+      async.map(allPackagesDir, readItemsFromPackageDir, function (err, results) {
+        if (err) {
+          return cb(err);
+        }
+        cb(null, _.flatten(results));
+      });
+    });
+  }
+
+  // process all package paths
+  async.map(packagesPath.filter(fs.existsSync), fillPackages, function (err, results) {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, _.flatten(results));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {[string]} packagesPath : list of directories to find packages in.
+ * @param {string} itemType item type in plural. (&#x27;dashboards&#x27;, &#x27;jobs&#x27;, &#x27;widgets&#x27;)
+ * @param {string} extension : filter result by extension
+ */
+
+get: function (packagesPath, itemType, extension, callback) {
+  this.<span class="apidocCodeKeywordSpan">getByPackage</span>(packagesPath, itemType, extension, function (err, results) {
+    if (err) {
+      return callback(err);
+    }
+    var items = [];
+    results.forEach(function (package) {
+      items = items.concat(package.items);
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.item_manager.getFirst" id="apidoc.element.atlasboard.item_manager.getFirst">
+        function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>getFirst
+        <span class="apidocSignatureSpan">(packagesPath, itemName, itemType, extension, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFirst = function (packagesPath, itemName, itemType, extension, callback) {
+  var thiz = this;
+  this.get(packagesPath, itemType, extension, function (err, items) {
+    if (err) {
+      return callback(err);
+    }
+
+    var candidates = thiz.resolveCandidates(items, itemName, itemType, extension);
+    callback(null, candidates.length ? candidates[0] : null);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.item_manager.resolveCandidates" id="apidoc.element.atlasboard.item_manager.resolveCandidates">
+        function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>resolveCandidates
+        <span class="apidocSignatureSpan">(items, name, itemType, extension)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveCandidates = function (items, name, itemType, extension) {
+  var searchCriteria = &#x22;&#x22;;
+  if (name.indexOf(&#x22;#&#x22;) &#x3e; -1) {
+    var packageName = name.split(&#x22;#&#x22;)[0];
+    var itemParsedName = name.split(&#x22;#&#x22;)[1];
+    // package/jobs/job1/job1.js
+    searchCriteria = path.join(packageName, this.resolveLocation(itemParsedName, itemType, extension));
+  }
+  else {
+    // jobs/job1/job1.js
+    searchCriteria = this.resolveLocation(name, itemType, extension);
+  }
+
+  searchCriteria = path.sep + searchCriteria;
+
+  return items.filter(function (item) {
+    return item.indexOf(searchCriteria) &#x3e; -1;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+getFirst: function (packagesPath, itemName, itemType, extension, callback) {
+  var thiz = this;
+  this.get(packagesPath, itemType, extension, function (err, items) {
+    if (err) {
+      return callback(err);
+    }
+
+    var candidates = thiz.<span class="apidocCodeKeywordSpan">resolveCandidates</span>(items, itemName, itemType, extension);
+    callback(null, candidates.length ? candidates[0] : null);
+  });
+},
+
+
+/**
+ * Return list of items found in any package within packagesPath
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.item_manager.resolveLocation" id="apidoc.element.atlasboard.item_manager.resolveLocation">
+        function <span class="apidocSignatureSpan">atlasboard.item_manager.</span>resolveLocation
+        <span class="apidocSignatureSpan">(name, itemType, extension)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveLocation = function (name, itemType, extension) {
+  var useDirectoryLevel = ((itemType === &#x22;widgets&#x22;) || (itemType === &#x22;jobs&#x22;));
+  if (useDirectoryLevel) {
+    // jobs/job1/job1.js
+    return path.join(itemType, name, name + extension);
+  }
+  else {
+    // dashboards/dashboard.json
+    return path.join(itemType, name + extension);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  resolveCandidates: function (items, name, itemType, extension) {
+var searchCriteria = &#x22;&#x22;;
+if (name.indexOf(&#x22;#&#x22;) &#x3e; -1) {
+  var packageName = name.split(&#x22;#&#x22;)[0];
+  var itemParsedName = name.split(&#x22;#&#x22;)[1];
+  // package/jobs/job1/job1.js
+  searchCriteria = path.join(packageName, this.<span class="apidocCodeKeywordSpan">resolveLocation</span>(itemParsedName, itemType
+, extension));
+}
+else {
+  // jobs/job1/job1.js
+  searchCriteria = this.resolveLocation(name, itemType, extension);
+}
+
+searchCriteria = path.sep + searchCriteria;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.job_initialiser" id="apidoc.module.atlasboard.job_initialiser">module atlasboard.job_initialiser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.job_initialiser.init" id="apidoc.element.atlasboard.job_initialiser.init">
+        function <span class="apidocSignatureSpan">atlasboard.job_initialiser.</span>init
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(options, cb) {
+
+  jobsManager.getJobs(options, function (err, jobWorkers) {
+    if (err) {
+      return cb(err);
+    }
+
+    var globalAuth = loadGlobalAuth(configManager(&#x27;auth&#x27;).authenticationFilePath);
+
+    if (!jobWorkers.length) {
+      logger.warn(&#x22;No jobs found matching the current configuration and filters&#x22;);
+    }
+    else {
+      var eventQueue = new EventQueue(options.deps.io);
+      jobWorkers.forEach(function (jobWorker, index) {
+
+        // unique id for this widget in the wallboard
+        jobWorker.id = jobWorker.dashboard_name + &#x27;-&#x27; +
+            (jobWorker.widget_item.r || jobWorker.widget_item.row) + &#x27;-&#x27; +
+            (jobWorker.widget_item.c || jobWorker.widget_item.col);
+
+        jobWorker.pushUpdate = function (data) {
+          eventQueue.send(jobWorker.id, data);
+        };
+
+        // add security info
+        jobWorker.config.globalAuth = globalAuth;
+
+        if (jobWorker.widget_item.enabled !== false) {
+
+          jobDependencyManager.fillDependencies(jobWorker, options.deps);
+
+          if (jobWorker.onInit) {
+            jobWorker.onInit.call(jobWorker, jobWorker.config, jobWorker.dependencies);
+          }
+
+          if (jobWorker.onRun) {
+            setTimeout(function () {
+              var scheduler = new Scheduler(jobWorker);
+              scheduler.start();
+            }, index * 1500); // avoid a concurrency peak on startup
+          }
+        }
+        else { // job is disabled
+          jobWorker.pushUpdate({error: &#x27;disabled&#x27;});
+        }
+
+      });
+    }
+    return cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.job_manager" id="apidoc.module.atlasboard.job_manager">module atlasboard.job_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.job_manager.getJobs" id="apidoc.element.atlasboard.job_manager.getJobs">
+        function <span class="apidocSignatureSpan">atlasboard.job_manager.</span>getJobs
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getJobs = function (options, callback) {
+
+  var packagesPath = options.packagesPath;
+  var filters = options.filters || {};
+
+  var configPath = path.join(options.configPath,&#x22;/dashboard_common.json&#x22;);
+  var generalDashboardConfig = {};
+
+  var jobs = [];
+
+  // ----------------------------------------------
+  // general config is optional, but if it exists it needs to be a valid file
+  // ----------------------------------------------
+  if (fs.existsSync(configPath)){
+    try{
+      generalDashboardConfig = JSON.parse(fs.readFileSync(configPath)).config;
+      if (!generalDashboardConfig) {
+        throw &#x27;invalid format. config property not found&#x27;;
+      }
+    }
+    catch (e){
+      return callback(&#x22;ERROR reading general config file...&#x22; + configPath);
+    }
+  }
+
+  // ----------------------------------------------
+  // get all dashboards from all packages folder
+  // ----------------------------------------------
+  itemManager.get(packagesPath, &#x22;dashboards&#x22;, &#x22;.json&#x22;, function(err, dashboardConfigFiles){
+    if (err){ return callback(err); }
+
+    // ----------------------------------------------
+    // get all jobs from those packages
+    // ----------------------------------------------
+    itemManager.get(packagesPath, &#x22;jobs&#x22;, &#x22;.js&#x22;, function(err, allJobs){
+      if (err){ return callback(err); }
+
+      for (var d = 0, dl = dashboardConfigFiles.length; d &#x3c; dl ; d++) {
+        var dashboardName = dashboardConfigFiles[d];
+
+        if (filters.dashboardFilter){
+          if (!matchDashboardFilter(dashboardName, filters.dashboardFilter)){
+            continue;
+          }
+        }
+
+        var dashboardConfig;
+        var dashboardJobs;
+        try {
+          dashboardConfig = readDashboard(dashboardName);
+          dashboardJobs = processDashboard(allJobs, dashboardName, dashboardConfig, filters);
+        }
+        catch (e){
+          return callback (e);
+        }
+
+        // add config to job, extending for the same config key in general config, if any
+        dashboardJobs = dashboardJobs.map(function(job){
+          // Multiple configurations:
+          //  local overrides global
+          //  config n+1 overrides config n
+          if (Array.isArray(job.configKey)) {
+            var configs = job.configKey.map(function(key){
+              return extend(generalDashboardConfig[key], dashboardConfig.config[key]);
+            });
+            job.config = extend.apply(null, configs);
+          } else { // single configuration
+            job.config = extend(generalDashboardConfig[job.configKey], dashboardConfig.config[job.configKey]);
+          }
+
+          return job;
+        });
+
+        jobs = jobs.concat(dashboardJobs);
+      }
+
+      callback(null, jobs);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var jobDependencyManager = require(&#x27;./job-dependencies/loader.js&#x27;);
+var logger = require(&#x27;./logger&#x27;)();
+
+exports = module.exports = (function () {
+
+  function init(options, cb) {
+
+    jobsManager.<span class="apidocCodeKeywordSpan">getJobs</span>(options, function (err, jobWorkers) {
+if (err) {
+  return cb(err);
+}
+
+var globalAuth = loadGlobalAuth(configManager(&#x27;auth&#x27;).authenticationFilePath);
+
+if (!jobWorkers.length) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.package_dependency_manager" id="apidoc.module.atlasboard.package_dependency_manager">module atlasboard.package_dependency_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.package_dependency_manager.installDependencies" id="apidoc.element.atlasboard.package_dependency_manager.installDependencies">
+        function <span class="apidocSignatureSpan">atlasboard.package_dependency_manager.</span>installDependencies
+        <span class="apidocSignatureSpan">(packagesPath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">installDependencies = function (packagesPath, callback){
+
+  // Process all available package containers
+  async.map (packagesPath.filter(fs.existsSync), checkPackagesFolder, function(err, results){
+    if (err){ return callback(err); }
+    var paths = _.flatten(results);
+
+    async.eachSeries(paths, checkValidIfAtlasboardVersionForPackage, function (err){
+      if (err){
+        return callback(err);
+      }
+
+      async.eachSeries(paths, install, function (err){
+        callback(err);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.path_resolver" id="apidoc.module.atlasboard.path_resolver">module atlasboard.path_resolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.path_resolver.fromAtlasboard" id="apidoc.element.atlasboard.path_resolver.fromAtlasboard">
+        function <span class="apidocSignatureSpan">atlasboard.path_resolver.</span>fromAtlasboard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromAtlasboard = function () {
+  return getFromRootPath(__dirname, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var debug = require(&#x27;debug&#x27;)(&#x27;theming&#x27;);
+
+exports = module.exports = (function () {
+
+var themingConfig = configManager(&#x27;theming&#x27;);
+
+var localTheme = pathResolver.fromLocalWallboard(&#x27;themes&#x27;, themingConfig.theme, &#x27;variables.styl&#x27;);
+var atlasboardTheme = pathResolver.<span class="apidocCodeKeywordSpan">fromAtlasboard</span>(&#x27;../themes&#x27;, themingConfig
+.theme, &#x27;variables.styl&#x27;);
+
+var defaultTheme = pathResolver.fromAtlasboard(&#x27;../assets&#x27;, &#x27;stylesheets&#x27;, &#x27;variables.styl&#x27;);
+
+function getStylusObject(str) {
+  var stylObj = stylus(str);
+  stylObj.import(defaultTheme); // import default core stylus variables
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.path_resolver.fromLocalWallboard" id="apidoc.element.atlasboard.path_resolver.fromLocalWallboard">
+        function <span class="apidocSignatureSpan">atlasboard.path_resolver.</span>fromLocalWallboard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromLocalWallboard = function () {
+  return getFromRootPath(process.cwd(), arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var pathResolver = require(&#x27;./path-resolver&#x27;);
+var debug = require(&#x27;debug&#x27;)(&#x27;theming&#x27;);
+
+exports = module.exports = (function () {
+
+var themingConfig = configManager(&#x27;theming&#x27;);
+
+var localTheme = pathResolver.<span class="apidocCodeKeywordSpan">fromLocalWallboard</span>(&#x27;themes&#x27;, themingConfig.theme
+, &#x27;variables.styl&#x27;);
+var atlasboardTheme = pathResolver.fromAtlasboard(&#x27;../themes&#x27;, themingConfig.theme, &#x27;variables.styl&#x27;);
+
+var defaultTheme = pathResolver.fromAtlasboard(&#x27;../assets&#x27;, &#x27;stylesheets&#x27;, &#x27;variables.styl&#x27;);
+
+function getStylusObject(str) {
+  var stylObj = stylus(str);
+  stylObj.import(defaultTheme); // import default core stylus variables
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.scheduler" id="apidoc.module.atlasboard.scheduler">module atlasboard.scheduler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.scheduler.scheduler" id="apidoc.element.atlasboard.scheduler.scheduler">
+        function <span class="apidocSignatureSpan">atlasboard.</span>scheduler
+        <span class="apidocSignatureSpan">(jobWorker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scheduler(jobWorker) {
+  this.jobWorker = ensureSafeJobWorkerConfiguration(jobWorker);
+  this.originalInterval = jobWorker.config.interval;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.scheduler.prototype" id="apidoc.module.atlasboard.scheduler.prototype">module atlasboard.scheduler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.scheduler.prototype.scheduleNext" id="apidoc.element.atlasboard.scheduler.prototype.scheduleNext">
+        function <span class="apidocSignatureSpan">atlasboard.scheduler.prototype.</span>scheduleNext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scheduleNext = function (){
+  var self = this;
+  setTimeout(function(){
+    self.start();
+  }, this.jobWorker.config.interval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (err) {
+      handleError(err);
+    }
+    else {
+      handleSuccess(data);
+    }
+    self.<span class="apidocCodeKeywordSpan">scheduleNext</span>();
+  }
+
+  job.onRun.call(job, job.config, job.dependencies, jobCallback);
+
+}
+catch (e) {
+  job.dependencies.logger.error(&#x27;Uncaught exception executing job: &#x27; + e);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.scheduler.prototype.start" id="apidoc.element.atlasboard.scheduler.prototype.start">
+        function <span class="apidocSignatureSpan">atlasboard.scheduler.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+
+  var self = this;
+  var job = self.jobWorker;
+
+  function handleError(err) {
+
+    job.dependencies.logger.error(&#x27;executed with errors: &#x27; + err);
+
+    // in case of error retry in one third of the original interval or 1 min, whatever is lower
+    job.config.interval = Math.min(self.originalInterval / 3, 60000);
+
+    // -------------------------------------------------------------
+    // Decide if we hold error notification according to widget config.
+    // if the retryOnErrorTimes property found in config, the error notification
+    // won´t be sent until we reach that number of consecutive errrors.
+    // This will prevent showing too many error when connection to flaky, unreliable
+    // servers.
+    // -------------------------------------------------------------
+    var sendError = true;
+    if (job.firstRun === false) {
+      if (job.config.retryOnErrorTimes) {
+        job.retryOnErrorCounter = job.retryOnErrorCounter || 0;
+        if (job.retryOnErrorCounter &#x3c;= job.config.retryOnErrorTimes) {
+          job.dependencies.logger.warn(&#x27;widget with retryOnErrorTimes. attempts: &#x27; +
+              job.retryOnErrorCounter);
+          sendError = false;
+          job.retryOnErrorCounter++;
+        }
+      }
+    }
+    else {
+      // this is the first run for this job so if it fails, we want to inform immediately
+      // since it may be a configuration or dev related problem.
+      job.firstRun = false;
+    }
+
+    if (sendError) {
+      job.pushUpdate({error: err, config: {interval: job.config.interval}});
+    }
+  }
+
+  function handleSuccess(data) {
+    job.retryOnErrorCounter = 0; //reset error counter on success
+    job.dependencies.logger.log(&#x27;executed OK&#x27;);
+    job.config.interval = self.originalInterval;
+    if (!data) {
+      data = {};
+    }
+    data.config = {interval: job.config.interval}; // give access to interval to client
+    job.pushUpdate(data);
+  }
+
+  try {
+
+    var cbCalled = false; // job_callback is meant to be executed only once per job run
+
+    function jobCallback (err, data){
+      if (cbCalled) {
+        job.dependencies.logger.warn(&#x27;WARNING!!!!: job_callback executed more than once for job &#x27; +
+        job.widget_item.job + &#x27; in dashboard &#x27; + job.dashboard_name);
+      }
+      cbCalled = true;
+
+      if (err) {
+        handleError(err);
+      }
+      else {
+        handleSuccess(data);
+      }
+      self.scheduleNext();
+    }
+
+    job.onRun.call(job, job.config, job.dependencies, jobCallback);
+
+  }
+  catch (e) {
+    job.dependencies.logger.error(&#x27;Uncaught exception executing job: &#x27; + e);
+    handleError(e);
+    self.scheduleNext();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (jobWorker.onInit) {
+    jobWorker.onInit.call(jobWorker, jobWorker.config, jobWorker.dependencies);
+  }
+
+  if (jobWorker.onRun) {
+    setTimeout(function () {
+      var scheduler = new Scheduler(jobWorker);
+      scheduler.<span class="apidocCodeKeywordSpan">start</span>();
+    }, index * 1500); // avoid a concurrency peak on startup
+  }
+}
+else { // job is disabled
+  jobWorker.pushUpdate({error: &#x27;disabled&#x27;});
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.stylus" id="apidoc.module.atlasboard.stylus">module atlasboard.stylus</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.stylus.getMiddleware" id="apidoc.element.atlasboard.stylus.getMiddleware">
+        function <span class="apidocSignatureSpan">atlasboard.stylus.</span>getMiddleware
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMiddleware = function (options) {
+  return stylus.middleware({
+    src: options.src,
+    dest: options.dest,
+
+    compile: function (str, filePath) {
+      var stylObj = getStylusObject(str);
+      stylObj.set(&#x27;filename&#x27;, filePath)
+          .set(&#x27;warn&#x27;, false)
+          .set(&#x27;compress&#x27;, true)
+          .use(nib());
+
+      return stylObj;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.stylus.getWidgetCSS" id="apidoc.element.atlasboard.stylus.getWidgetCSS">
+        function <span class="apidocSignatureSpan">atlasboard.stylus.</span>getWidgetCSS
+        <span class="apidocSignatureSpan">(str, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getWidgetCSS = function (str, cb) {
+  getStylusObject(str).render(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.atlasboard.template_manager" id="apidoc.module.atlasboard.template_manager">module atlasboard.template_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.template_manager.resolveTemplateLocation" id="apidoc.element.atlasboard.template_manager.resolveTemplateLocation">
+        function <span class="apidocSignatureSpan">atlasboard.template_manager.</span>resolveTemplateLocation
+        <span class="apidocSignatureSpan">(fileName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveTemplateLocation = function (fileName, cb) {
+  var localWallboardLocation = path.join(process.cwd(), &#x22;templates&#x22;, fileName);
+  var defaultAtlasboardLocation = path.join(__dirname, &#x22;../templates&#x22;, fileName);
+  fs.exists(localWallboardLocation, function(exists){
+    if (exists) {
+      cb(null, localWallboardLocation);
+    }
+    else {
+      cb(null, defaultAtlasboardLocation);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
