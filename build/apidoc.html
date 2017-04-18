@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.atlasboard.atlasboard">
+            function <span class="apidocSignatureSpan"></span>atlasboard
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.atlasboard.event_queue">
             function <span class="apidocSignatureSpan">atlasboard.</span>event_queue
             <span class="apidocSignatureSpan">(io)</span>
@@ -419,6 +428,83 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.atlasboard" id="apidoc.module.atlasboard">module atlasboard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.atlasboard.atlasboard" id="apidoc.element.atlasboard.atlasboard">
+        function <span class="apidocSignatureSpan"></span>atlasboard
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">atlasboard = function (options, callback) {
+
+  options = options || {};
+
+  var packagesLocalFolder = path.join(process.cwd(), &#x22;/packages&#x22;);
+  var packagesAtlasboardFolder = path.join(__dirname, &#x22;../packages&#x22;);
+
+  var configPath = path.join(process.cwd(), &#x22;/config&#x22;);
+
+  var runner = function (cb) {
+
+    //-----------------------------------
+    // Init web server
+    //-----------------------------------
+
+    var app = express();
+    var httpServer = webServer(app, {
+      port: options.port,
+      packageLocations: [packagesLocalFolder, packagesAtlasboardFolder]
+    });
+
+    console.log(&#x27;\n-------------------------------------------&#x27;.yellow);
+    console.log((&#x27;Atlasboard listening at port &#x27; + options.port).gray);
+    console.log(&#x27;-------------------------------------------&#x27;.yellow + &#x27;\n&#x27;);
+
+    //-----------------------------------
+    // Init socket.io server
+    //-----------------------------------
+
+    var io = socketIO.listen(httpServer, {
+      &#x27;log level&#x27;: 2
+    });
+    var startTime = new Date().getTime();
+    io.on(&#x27;connection&#x27;, function (socket) {
+      socket.emit(&#x22;serverinfo&#x22;, {startTime: startTime});
+    });
+
+    //-----------------------------------
+    // Init jobs / scheduler
+    //-----------------------------------
+
+    var jobOptions = {
+      packagesPath: [packagesLocalFolder, packagesAtlasboardFolder],
+      configPath: configPath,
+      filters: options.filters,
+      deps: {io: io, app: app}
+    };
+
+    jobInitialiser.init(jobOptions, cb);
+  };
+
+  if (options.install) {
+    console.log(&#x27;Installing dependencies...&#x27;.gray);
+    packageDependencyManager.installDependencies([packagesLocalFolder], function (err) {
+      if (err) {
+        return callback(err);
+      }
+      console.log(&#x27;done!&#x27;.green);
+      runner(callback);
+    });
+  } else {
+    runner(callback);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -1124,7 +1210,23 @@ searchCriteria = path.sep + searchCriteria;
     return cb();
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var jobOptions = {
+    packagesPath: [packagesLocalFolder, packagesAtlasboardFolder],
+    configPath: configPath,
+    filters: options.filters,
+    deps: {io: io, app: app}
+  };
+
+  jobInitialiser.<span class="apidocCodeKeywordSpan">init</span>(jobOptions, cb);
+};
+
+if (options.install) {
+  console.log(&#x27;Installing dependencies...&#x27;.gray);
+  packageDependencyManager.installDependencies([packagesLocalFolder], function (err) {
+    if (err) {
+      return callback(err);
+...</pre></li>
     </ul>
 
 
@@ -1272,7 +1374,23 @@ if (!jobWorkers.length) {
     });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  };
+
+  jobInitialiser.init(jobOptions, cb);
+};
+
+if (options.install) {
+  console.log(&#x27;Installing dependencies...&#x27;.gray);
+  packageDependencyManager.<span class="apidocCodeKeywordSpan">installDependencies</span>([packagesLocalFolder], function (err) {
+    if (err) {
+      return callback(err);
+    }
+    console.log(&#x27;done!&#x27;.green);
+    runner(callback);
+  });
+} else {
+...</pre></li>
     </ul>
 
 
