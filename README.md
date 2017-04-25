@@ -1,6 +1,6 @@
 # npmdoc-atlasboard
 
-#### api documentation for  [atlasboard (v1.1.3)](http://atlasboard.bitbucket.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-atlasboard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-atlasboard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-atlasboard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-atlasboard)
+#### basic api documentation for  [atlasboard (v1.1.3)](http://atlasboard.bitbucket.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-atlasboard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-atlasboard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-atlasboard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-atlasboard)
 
 #### AtlasBoard is dashboard/wallboard framework written all in JS
 
